@@ -1,9 +1,8 @@
-import type { KeyboardLayoutMap } from 'keyboard-layout-map'
 import { US as USKeyboardLayoutMap } from 'keyboard-layout-map/layouts'
 
 import { getLayout, isAppleOS } from './env'
-import { wrapLocalizer, type Localizer } from './localize'
-import type { KeyboardShortcut } from './types'
+import { wrapLocalizer } from './localize'
+import type { KeyboardShortcut, Options } from './types'
 
 /**
  * Returns a function that formats a keyboard shortcut as an array of strings.
@@ -16,23 +15,7 @@ export function format(
   /**
    * Options for formatting the keyboard shortcut.
    */
-  options?: {
-    /**
-     * Whether the current platform is Apple systems. It will be detected
-     * automatically if not provided.
-     */
-    isAppleOS?: boolean
-    /**
-     * The keyboard layout to use. It will be detected automatically if not
-     * provided.
-     */
-    layout?: KeyboardLayoutMap
-    /**
-     * The function to use for localizing the shortcut. Defaults to
-     * {@link defaultLocalizer}
-     */
-    localizer?: Localizer
-  },
+  options?: Options,
 ): () => string[] {
   const getLocalized = wrapLocalizer(shortcut, options)
 

@@ -6,18 +6,14 @@ import {
 import { getLayout, updateLayout } from './env'
 import { layoutEquals } from './helpers'
 import { parseShortcut } from './parse'
-import type { KeyboardEventCode } from './types'
-import type { KeyboardEventKey } from './types'
-import type { ParsedKeyboardShortcut } from './types'
-import type { KeyboardShortcut } from './types'
-
-/**
- * A function that localizes a keyboard shortcut.
- */
-export type Localizer = (
-  shortcut: ParsedKeyboardShortcut,
-  layout: KeyboardLayoutMap,
-) => ParsedKeyboardShortcut
+import type {
+  KeyboardEventCode,
+  KeyboardEventKey,
+  KeyboardShortcut,
+  Localizer,
+  Options,
+  ParsedKeyboardShortcut,
+} from './types'
 
 /**
  * The default localizer.
@@ -100,11 +96,7 @@ function localizeTarget(
  */
 export function wrapLocalizer(
   shortcut: KeyboardShortcut,
-  options?: {
-    isAppleOS?: boolean
-    layout?: KeyboardLayoutMap
-    localizer?: Localizer
-  },
+  options?: Options,
 ): () => ParsedKeyboardShortcut {
   const localizer = options?.localizer || defaultLocalizer
 

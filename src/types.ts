@@ -4,6 +4,8 @@
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_code_values}
  */
 
+import type { KeyboardLayoutMap } from 'keyboard-layout-map'
+
 export declare type KeyboardEventCode =
   | 'AltLeft'
   | 'AltRight'
@@ -253,4 +255,30 @@ export interface ParsedKeyboardShortcut {
   ctrl: boolean
   shift: boolean
   meta: boolean
+}
+
+/**
+ * A function that localizes a keyboard shortcut.
+ */
+export type Localizer = (
+  shortcut: ParsedKeyboardShortcut,
+  layout: KeyboardLayoutMap,
+) => ParsedKeyboardShortcut
+
+export interface Options {
+  /**
+   * Whether the current platform is Apple systems. It will be detected
+   * automatically if not provided.
+   */
+  isAppleOS?: boolean
+  /**
+   * The keyboard layout to use. It will be detected automatically if not
+   * provided.
+   */
+  layout?: KeyboardLayoutMap
+  /**
+   * The function to use for localizing the shortcut. Defaults to
+   * {@link defaultLocalizer}
+   */
+  localizer?: Localizer
 }

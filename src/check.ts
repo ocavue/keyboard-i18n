@@ -1,9 +1,11 @@
-import type { KeyboardLayoutMap } from 'keyboard-layout-map'
-
 import { isKeyboardEventLike } from './helpers'
-import { wrapLocalizer, type Localizer } from './localize'
-import type { KeyboardEventLike } from './types'
-import type { KeyboardShortcut, ParsedKeyboardShortcut } from './types'
+import { wrapLocalizer } from './localize'
+import type {
+  KeyboardEventLike,
+  KeyboardShortcut,
+  Options,
+  ParsedKeyboardShortcut,
+} from './types'
 
 /**
  * Returns a function that checks if an keyboard event matches the keyboard shortcut.
@@ -16,23 +18,7 @@ export function check<E extends KeyboardEvent>(
   /**
    * Options for checking the keyboard shortcut.
    */
-  options?: {
-    /**
-     * Whether the current platform is Apple systems. It will be detected
-     * automatically if not provided.
-     */
-    isAppleOS?: boolean
-    /**
-     * The keyboard layout to use. It will be detected automatically if not
-     * provided.
-     */
-    layout?: KeyboardLayoutMap
-    /**
-     * The function to use for localizing the shortcut. Defaults to
-     * {@link defaultLocalizer}
-     */
-    localizer?: Localizer
-  },
+  options?: Options,
 ): (event: E) => boolean {
   const getLocalized = wrapLocalizer(shortcut, options)
 
