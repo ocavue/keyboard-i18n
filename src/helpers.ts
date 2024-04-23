@@ -3,7 +3,7 @@ import {
   type KeyboardLayoutMap,
 } from 'keyboard-layout-map'
 
-import type { KeyboardEventLike } from './types/event'
+import type { KeyboardEventLike } from './types'
 
 export function isKeyboardEventLike(
   event: unknown,

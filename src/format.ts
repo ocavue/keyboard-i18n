@@ -3,7 +3,7 @@ import { US as USKeyboardLayoutMap } from 'keyboard-layout-map/layouts'
 
 import { getLayout, isAppleOS } from './env'
 import { wrapLocalizer, type Localizer } from './localize'
-import type { KeyboardShortcut } from './types/shortcut'
+import type { KeyboardShortcut } from './types'
 
 /**
  * Returns a function that formats a keyboard shortcut as an array of strings.

@@ -6,10 +6,10 @@ import {
 import { getLayout, updateLayout } from './env'
 import { layoutEquals } from './helpers'
 import { parseShortcut } from './parse'
-import type { KeyboardEventCode } from './types/code'
-import type { KeyboardEventKey } from './types/key'
-import type { ParsedKeyboardShortcut } from './types/shortcut'
-import type { KeyboardShortcut } from './types/shortcut'
+import type { KeyboardEventCode } from './types'
+import type { KeyboardEventKey } from './types'
+import type { ParsedKeyboardShortcut } from './types'
+import type { KeyboardShortcut } from './types'
 
 /**
  * A function that localizes a keyboard shortcut.

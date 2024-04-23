@@ -1,11 +1,11 @@
 import { isAppleOS } from './env'
-import type { KeyboardEventCode } from './types/code'
-import type { KeyboardEventKey } from './types/key'
+import type { KeyboardEventCode } from './types'
+import type { KeyboardEventKey } from './types'
 import type {
   KeyboardModifier,
   KeyboardShortcut,
   ParsedKeyboardShortcut,
-} from './types/shortcut'
+} from './types'
 
 /**
  * Parses a keyboard shortcut string into a {@link ParsedKeyboardShortcut} object.

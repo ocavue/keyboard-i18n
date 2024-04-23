@@ -2,8 +2,8 @@ import type { KeyboardLayoutMap } from 'keyboard-layout-map'
 
 import { isKeyboardEventLike } from './helpers'
 import { wrapLocalizer, type Localizer } from './localize'
-import type { KeyboardEventLike } from './types/event'
-import type { KeyboardShortcut, ParsedKeyboardShortcut } from './types/shortcut'
+import type { KeyboardEventLike } from './types'
+import type { KeyboardShortcut, ParsedKeyboardShortcut } from './types'
 
 /**
  * Returns a function that checks if an keyboard event matches the keyboard shortcut.
