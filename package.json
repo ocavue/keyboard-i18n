@@ -1,0 +1,54 @@
+{
+  "name": "keyboard-i18n",
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@8.15.6",
+  "description": "",
+  "author": "ocavue <ocavue@gmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/keyboard-i18n#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ocavue/keyboard-i18n.git"
+  },
+  "bugs": "https://github.com/ocavue/keyboard-i18n/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint .",
+    "fix": "eslint --fix . && prettier --write .",
+    "prepublishOnly": "nr build",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@ocavue/eslint-config": "^1.5.0",
+    "@types/node": "^20.12.5",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.4",
+    "vite": "^5.2.9",
+    "vitest": "^1.5.0"
+  },
+  "renovate": {
+    "extends": [
+      "github>ocavue/config-renovate"
+    ]
+  }
+}
