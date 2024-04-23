@@ -8,7 +8,7 @@ import type { KeyboardShortcut, Options, ParsedKeyboardShortcut } from './types'
 /**
  * Returns a function that formats a keyboard shortcut as an array of strings.
  */
-export function format(
+export function createFormatter(
   /**
    * The keyboard shortcut to format.
    */
