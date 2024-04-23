@@ -1,6 +1,6 @@
 /**
  * Some common event.code (KeyboardEvent.code) values that can be use in keyboard shortcuts.
- * 
+ *
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_code_values}
  */
 export declare type KeyboardEventCode =
