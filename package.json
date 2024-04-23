@@ -1,7 +1,7 @@
 {
   "name": "keyboard-i18n",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "packageManager": "pnpm@8.15.6",
   "description": "",
   "author": "ocavue <ocavue@gmail.com>",
