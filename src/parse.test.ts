@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import { parseShortcut } from './parse-shortcut'
+import { parseShortcut } from './parse'
 
 describe('parseShortcut', () => {
   it('should parse shortcut', () => {

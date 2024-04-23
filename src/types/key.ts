@@ -81,6 +81,7 @@ export declare type KeyboardEventKey =
   | '`'
   | '|'
   | '\\'
+  | '/'
   | '='
   | '-'
   | "'"

@@ -32,3 +32,15 @@ type KeyboardShortcutPrefix =
 export type KeyboardShortcut =
   | `${KeyboardShortcutPrefix}${KeyboardEventKey}`
   | `${KeyboardShortcutPrefix}${KeyboardEventCode}`
+
+/**
+ * A object that represents a parsed keyboard shortcut based on current
+ * platform.
+ */
+export interface ParsedKeyboardShortcut {
+  target: KeyboardEventCode | KeyboardEventKey
+  alt: boolean
+  ctrl: boolean
+  shift: boolean
+  meta: boolean
+}

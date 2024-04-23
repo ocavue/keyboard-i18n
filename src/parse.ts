@@ -1,20 +1,19 @@
 import { isAppleOS } from './env'
 import type { KeyboardEventCode } from './types/code'
 import type { KeyboardEventKey } from './types/key'
-import type { KeyboardModifier, KeyboardShortcut } from './types/shortcut'
+import type {
+  KeyboardModifier,
+  KeyboardShortcut,
+  ParsedKeyboardShortcut,
+} from './types/shortcut'
 
-export interface ParsedKeyboardShortcut {
-  target: KeyboardEventCode | KeyboardEventKey
-  alt: true
-  ctrl: true
-  shift: true
-  meta: true
-}
-
+/**
+ * Parses a keyboard shortcut string into a {@link ParsedKeyboardShortcut} object.
+ */
 export function parseShortcut(
   shortcut: KeyboardShortcut,
   options?: { isAppleOS?: boolean },
-) {
+): ParsedKeyboardShortcut {
   const apple = options?.isAppleOS ?? isAppleOS
 
   let modifiers: KeyboardModifier[]
