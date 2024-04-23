@@ -10,7 +10,7 @@ import type {
 /**
  * Returns a function that checks if an keyboard event matches the keyboard shortcut.
  */
-export function check<E extends KeyboardEvent>(
+export function createChecker<E extends KeyboardEventLike = KeyboardEvent>(
   /**
    * The keyboard shortcut to check.
    */
@@ -46,9 +46,10 @@ function eventMatches(
   // lowercase before comparing
   const key = event.key.toLowerCase()
   const code = event.code.toLowerCase()
+  const target = shortcut.target.toLowerCase()
 
   return (
-    (key === shortcut.target || code === shortcut.target) &&
+    (key === target || code === target) &&
     event.altKey === shortcut.alt &&
     event.ctrlKey === shortcut.ctrl &&
     event.shiftKey === shortcut.shift &&

@@ -1,4 +1,4 @@
-export { check } from './check'
+export { createChecker } from './check'
 export { createFormatter } from './format'
 export { defaultLocalizer } from './localize'
 export type {
