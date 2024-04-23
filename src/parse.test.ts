@@ -1,61 +1,32 @@
 import { describe, it, expect } from 'vitest'
 
 import { parseShortcut } from './parse'
+import type { KeyboardShortcut } from './types'
+
+function doParse(shortcut: KeyboardShortcut, isAppleOS?: boolean) {
+  const parsed = parseShortcut(shortcut, { isAppleOS })
+  return [
+    parsed.alt && 'alt',
+    parsed.ctrl && 'ctrl',
+    parsed.meta && 'meta',
+    parsed.shift && 'shift',
+    parsed.target,
+  ]
+    .filter(Boolean)
+    .join(' ')
+}
 
 describe('parseShortcut', () => {
   it('should parse shortcut', () => {
-    expect(parseShortcut('Escape')).toMatchInlineSnapshot(`
-      {
-        "alt": false,
-        "ctrl": false,
-        "meta": false,
-        "shift": false,
-        "target": "Escape",
-      }
-    `)
+    expect(doParse('Escape')).toMatchInlineSnapshot(`"Escape"`)
 
-    expect(parseShortcut('shift+a')).toMatchInlineSnapshot(`
-      {
-        "alt": false,
-        "ctrl": false,
-        "meta": false,
-        "shift": true,
-        "target": "a",
-      }
-    `)
+    expect(doParse('shift+a')).toMatchInlineSnapshot(`"shift a"`)
+    expect(doParse('alt+KeyA')).toMatchInlineSnapshot(`"alt KeyA"`)
   })
 
   it('should parse mod', () => {
-    expect(parseShortcut('mod+Slash')).toMatchInlineSnapshot(`
-      {
-        "alt": false,
-        "ctrl": true,
-        "meta": false,
-        "shift": false,
-        "target": "Slash",
-      }
-    `)
-
-    expect(parseShortcut('mod+Slash', { isAppleOS: false }))
-      .toMatchInlineSnapshot(`
-      {
-        "alt": false,
-        "ctrl": true,
-        "meta": false,
-        "shift": false,
-        "target": "Slash",
-      }
-    `)
-
-    expect(parseShortcut('mod+Slash', { isAppleOS: true }))
-      .toMatchInlineSnapshot(`
-      {
-        "alt": false,
-        "ctrl": false,
-        "meta": true,
-        "shift": false,
-        "target": "Slash",
-      }
-    `)
+    expect(doParse('mod+Slash')).toMatchInlineSnapshot(`"ctrl Slash"`)
+    expect(doParse('mod+Slash', false)).toMatchInlineSnapshot(`"ctrl Slash"`)
+    expect(doParse('mod+Slash', true)).toMatchInlineSnapshot(`"meta Slash"`)
   })
 })
