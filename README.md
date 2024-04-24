@@ -10,17 +10,17 @@ Dealing with various keyboard layouts can be tricky when setting up shortcuts be
 
 For instance, `Ctrl A` is often used to select all text because "A" stands for "all". However, in gaming, keys like `W` `A` `S` `D` are used for movement, and here, the actual characters on the keys aren't as important as their positions.
 
-![](https://github.com/ocavue/keyboard-i18n/assets/24715727/d653380d-5251-4115-ba1b-4ee8bc375bc7 "The key A is placed at different positions on different keyboard layouts")
-
 To address this, `keyboard-i18n` lets you define shortcuts using either the [`KeyboardEvent.key`] for characters or [`KeyboardEvent.code`] for key positions. For example, `ctrl+a` would be set using [`KeyboardEvent.key`], and `ctrl+KeyA` would use [`KeyboardEvent.code`].
+
+<img width="512" src="https://github.com/ocavue/keyboard-i18n/assets/24715727/d653380d-5251-4115-ba1b-4ee8bc375bc7" alt="The key A is placed at different positions on different keyboard layouts">
 
 **Secondly**, the same shortcuts can behave differently on various keyboard layouts.
 
-For example, shortcuts for navigating back and forward like `Ctrl [` and `Ctrl ]` change drastically between US, Latin American, and German keyboards.
-
-![](https://github.com/ocavue/keyboard-i18n/assets/24715727/64b84cd0-a3db-468e-9bff-8010e73ac4a1 "Shortcuts for navigating back and forward change drastically between US, Latin American, and German keyboards")
+For example, shortcuts for navigating back and forward like `Ctrl [` and `Ctrl ]` change drastically between US, German and Latin American layouts.
 
 `keyboard-i18n` solves this by providing a localizer that maps shortcuts from the US layout to other layouts, specifically adjusting code including `BracketLeft`, `BracketRight` and `Slash`.
+
+<img width="512" src="https://github.com/ocavue/keyboard-i18n/assets/24715727/64b84cd0-a3db-468e-9bff-8010e73ac4a1" alt="Shortcuts for navigating back and forward for US, German and Latin American layouts">
 
 ## Features
 
