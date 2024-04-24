@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/ocavue/keyboard-i18n/compare/v0.1.1...v0.2.0) (2024-04-24)
+
+
+### Features
+
+* add event handler ([#5](https://github.com/ocavue/keyboard-i18n/issues/5)) ([4615423](https://github.com/ocavue/keyboard-i18n/commit/461542351342c7c3ac3360f0a32ec98951a85b87))
+
 ## [0.1.1](https://github.com/ocavue/keyboard-i18n/compare/v0.1.0...v0.1.1) (2024-04-24)
 
 
