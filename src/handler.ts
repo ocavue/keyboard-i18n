@@ -10,9 +10,9 @@ import {
 /**
  * Returns a keyboard event handler that can be used to handle keyboard shortcuts.
  */
-export function createEventHandler<E extends KeyboardEventLike = KeyboardEvent>(
+export function createHandler<E extends KeyboardEventLike = KeyboardEvent>(
   /**
-   * The keyboard shortcut(s) to check.
+   * The keyboard shortcut to check.
    */
   shortcut: KeyboardShortcut | KeyboardShortcut[],
 
