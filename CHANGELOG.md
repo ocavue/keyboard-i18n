@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/ocavue/keyboard-i18n/compare/v0.1.0...v0.1.1) (2024-04-24)
+
+
+### Bug Fixes
+
+* check the system layout more often ([#2](https://github.com/ocavue/keyboard-i18n/issues/2)) ([9aeac53](https://github.com/ocavue/keyboard-i18n/commit/9aeac5311e2e2aa593e6aa860e1864a0371dbc9b))
+
 ## 0.1.0 (2024-04-23)
 
 
