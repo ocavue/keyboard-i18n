@@ -106,7 +106,7 @@ export function wrapLocalizer(
   // Refresh the cached layout
   getLayout()
 
-  let layout: KeyboardLayoutMap | null = null 
+  let layout: KeyboardLayoutMap | null = null
   let localized: ParsedKeyboardShortcut = parsed
 
   return () => {

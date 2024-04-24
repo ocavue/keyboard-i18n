@@ -1,7 +1,7 @@
 import * as layouts from 'keyboard-layout-map/layouts'
 import { describe, expect, it } from 'vitest'
 
-import { createFormatter } from './format'
+import { createFormatter } from './formatter'
 import type { KeyboardShortcut, Options } from './types'
 
 function doFormat(shortcut: KeyboardShortcut, options?: Options) {

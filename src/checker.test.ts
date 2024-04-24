@@ -3,7 +3,7 @@ import './env.mock'
 import * as layouts from 'keyboard-layout-map/layouts'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
-import { createChecker } from './check'
+import { createChecker } from './checker'
 import { setMockLayout } from './env.mock'
 
 describe('createChecker', () => {
