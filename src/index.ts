@@ -1,5 +1,5 @@
-export { createChecker } from './check'
-export { createFormatter } from './format'
+export { createChecker } from './checker'
+export { createFormatter } from './formatter'
 export { defaultLocalizer } from './localize'
 export type {
   KeyboardEventCode,

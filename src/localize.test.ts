@@ -2,7 +2,7 @@ import type { KeyboardLayoutMap } from 'keyboard-layout-map'
 import * as layouts from 'keyboard-layout-map/layouts'
 import { expect, test } from 'vitest'
 
-import { formatParsed } from './format'
+import { formatParsed } from './formatter'
 import { defaultLocalizer } from './localize'
 import { parseShortcut } from './parse'
 import type { KeyboardShortcut } from './types'
