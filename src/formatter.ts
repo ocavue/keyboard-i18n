@@ -20,7 +20,7 @@ export function createFormatter(
 ): () => string[] {
   const getLocalized = wrapLocalizer(shortcut, options)
 
-  return (): string[] => {
+  return function formatter(): string[] {
     const localized = getLocalized()
     const layout = options?.layout ?? getLayout() ?? USKeyboardLayoutMap
     const apple = options?.isAppleOS ?? isAppleOS

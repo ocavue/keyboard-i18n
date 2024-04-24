@@ -22,7 +22,7 @@ export function createChecker<E extends KeyboardEventLike = KeyboardEvent>(
 ): (event: E) => boolean {
   const getLocalized = wrapLocalizer(shortcut, options)
 
-  return (event: E): boolean => {
+  return function checker(event: E): boolean {
     if (!isKeyboardEventLike(event)) {
       return false
     }
