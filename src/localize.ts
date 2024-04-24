@@ -3,8 +3,7 @@ import {
   type KeyboardLayoutMap,
 } from 'keyboard-layout-map'
 
-import { getLayout, updateLayout } from './env'
-import { layoutEquals } from './helpers'
+import { getLayout } from './env'
 import { parseShortcut } from './parse'
 import type {
   KeyboardEventCode,
@@ -100,19 +99,20 @@ export function wrapLocalizer(
 ): () => ParsedKeyboardShortcut {
   const localizer = options?.localizer || defaultLocalizer
 
-  void updateLayout()
-
   const parsed: ParsedKeyboardShortcut = parseShortcut(shortcut, {
     isAppleOS: options?.isAppleOS,
   })
 
-  let layout: KeyboardLayoutMap | null = null
+  // Refresh the cached layout
+  getLayout()
+
+  let layout: KeyboardLayoutMap | null = null 
   let localized: ParsedKeyboardShortcut = parsed
 
   return () => {
     const currentLayout = options?.layout || getLayout()
 
-    if (!layoutEquals(currentLayout, layout)) {
+    if (currentLayout !== layout) {
       layout = currentLayout
       localized = layout ? localizer(parsed, layout) : parsed
     }
