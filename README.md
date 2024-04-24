@@ -2,32 +2,32 @@
 
 Internationalization and localization utils for keyboard shortcuts on web browsers.
 
-## Features
-
-- Auto detect keyboard layout on [supported browsers](https://caniuse.com/mdn-api_keyboard).
-- Manually specify keyboard layout.
-- Keyboard event handler and shortcut formatter.
-- Full TypeScript support.
-
 ## Why
 
 Dealing with various keyboard layouts can be tricky when setting up shortcuts because not all keyboards are the same. This leads to two main challenges:
 
 **Firstly**, shortcuts might need to be based on either the character a key represents or its physical location on the keyboard.
 
-For instance, `Ctrl A` is often used to select all text because "A" stands for "all."
+For instance, `Ctrl A` is often used to select all text because "A" stands for "all". However, in gaming, keys like `W` `A` `S` `D` are used for movement, and here, the actual characters on the keys aren't as important as their positions.
 
-However, in gaming, keys like `W` `A` `S` `D` are used for movement, and here, the actual characters on the keys aren't as important as their positions.
+To address this, `keyboard-i18n` lets you define shortcuts using either the [`KeyboardEvent.key`] for characters or [`KeyboardEvent.code`] for key positions. For example, `ctrl+a` would be set using [`KeyboardEvent.key`], and `ctrl+KeyA` would use [`KeyboardEvent.code`].
 
-To address this, keyboard-i18n lets you define shortcuts using either the `KeyboardEvent.key` for characters or `KeyboardEvent.code` for key positions. For example, `ctrl+a` would be set using `KeyboardEvent.key`, and `ctrl+KeyA` would use `KeyboardEvent.code`.
-
-(An image to show the US layout and French layout, with the key A highlighted).
+<img width="512" src="https://github.com/ocavue/keyboard-i18n/assets/24715727/d653380d-5251-4115-ba1b-4ee8bc375bc7" alt="The key A is placed at different positions on different keyboard layouts">
 
 **Secondly**, the same shortcuts can behave differently on various keyboard layouts.
 
-For example, shortcuts for navigating back and forward like `Ctrl [` and `Ctrl ]` change drastically between US, Latin American, and German keyboards. `keyboard-i18n` solves this by providing a localizer that maps shortcuts from the US layout to other layouts, specifically adjusting code including `BracketLeft`, `BracketRight` and `Slash`.
+For example, shortcuts for navigating back and forward like `Ctrl [` and `Ctrl ]` change drastically between US, German and Latin American layouts.
 
-(An image to show the US, Latin American, and German layouts, with the shortcut used for going back and going forward highlighted).
+`keyboard-i18n` solves this by providing a localizer that maps shortcuts from the US layout to other layouts, specifically adjusting code including `BracketLeft`, `BracketRight` and `Slash`.
+
+<img width="512" src="https://github.com/ocavue/keyboard-i18n/assets/24715727/64b84cd0-a3db-468e-9bff-8010e73ac4a1" alt="Shortcuts for navigating back and forward for US, German and Latin American layouts">
+
+## Features
+
+- Auto detect keyboard layout on [supported browsers](https://caniuse.com/mdn-api_keyboard).
+- Manually specify keyboard layout.
+- Keyboard event handler and shortcut formatter.
+- Full TypeScript support.
 
 ## Install
 
@@ -41,7 +41,7 @@ npm install keyboard-i18n keyboard-layout-map
 
 ### Define a Shortcut
 
-A shortcut is a string that combines zero or more modifiers with a `KeyboardEvent.key` or `KeyboardEvent.code`, separated by `+`.
+A shortcut is a string that combines zero or more modifiers with a [`KeyboardEvent.key`] or [`KeyboardEvent.code`], separated by `+`.
 
 #### Modifiers
 
@@ -51,11 +51,11 @@ A shortcut is a string that combines zero or more modifiers with a `KeyboardEven
 - `"meta"`: `Command` on macOS, `Win` on Windows
 - `"shift"`: `Shift` on all platforms
 
-#### Using `KeyboardEvent.key`
+#### Using [`KeyboardEvent.key`]
 
 Examples include single characters or symbols like `"a"`, `"9"`, or `"/"`.
 
-#### Using `KeyboardEvent.code`
+#### Using [`KeyboardEvent.code`]
 
 Examples include `"KeyA"`, `"Digit9"`, or `"Slash"`.
 
@@ -153,3 +153,6 @@ Please check the [API references](https://tsdocs.dev/docs/keyboard-i18n) for ful
 ## License
 
 MIT
+
+[`KeyboardEvent.code`]: https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_code_values
+[`KeyboardEvent.key`]: https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
