@@ -1,6 +1,6 @@
 export { createChecker } from './checker'
 export { createFormatter } from './formatter'
-export { createEventHandler } from './handler'
+export { createHandler } from './handler'
 export { defaultLocalizer } from './localize'
 export type {
   KeyboardEventCode,

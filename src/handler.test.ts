@@ -1,11 +1,11 @@
 import { expect, describe, it, vi } from 'vitest'
 
-import { createEventHandler } from './handler'
+import { createHandler } from './handler'
 
-describe('createEventHandler', () => {
+describe('createHandler', () => {
   it('should create a handler that can handle keyboard shortcuts', () => {
     const callback = vi.fn()
-    const handler = createEventHandler('shift+a', callback)
+    const handler = createHandler('shift+a', callback)
 
     handler(
       new KeyboardEvent('keydown', {
