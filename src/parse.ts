@@ -32,16 +32,16 @@ export function parseShortcut(
     modifiers = parts as KeyboardModifier[]
   }
 
-  if (modifiers.includes('shift')) {
+  if (modifiers.includes('shift') || target.startsWith('Shift')) {
     shift = true
   }
-  if (modifiers.includes('ctrl')) {
+  if (modifiers.includes('ctrl') || target.startsWith('Control')) {
     ctrl = true
   }
-  if (modifiers.includes('alt')) {
+  if (modifiers.includes('alt') || target.startsWith('Alt')) {
     alt = true
   }
-  if (modifiers.includes('meta')) {
+  if (modifiers.includes('meta') || target.startsWith('Meta')) {
     meta = true
   }
   if (modifiers.includes('mod')) {
