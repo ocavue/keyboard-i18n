@@ -1,7 +1,7 @@
 {
   "name": "keyboard-i18n",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "packageManager": "pnpm@8.15.6",
   "description": "Internationalization and localization utils for keyboard shortcuts",
   "author": "ocavue <ocavue@gmail.com>",
