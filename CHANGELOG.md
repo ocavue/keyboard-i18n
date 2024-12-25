@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/ocavue/keyboard-i18n/compare/v0.2.0...v0.2.1) (2024-12-25)
+
+
+### Bug Fixes
+
+* allow a simple modifier key as shortcut ([#10](https://github.com/ocavue/keyboard-i18n/issues/10)) ([929d803](https://github.com/ocavue/keyboard-i18n/commit/929d803d0f1b8854ee8098ba002a2d03209653cd))
+
 ## [0.2.0](https://github.com/ocavue/keyboard-i18n/compare/v0.1.1...v0.2.0) (2024-04-24)
 
 
