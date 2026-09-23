@@ -145,7 +145,7 @@ createHandler('mod+shift+BracketLeft', { layout: layouts.German })
 
 ## API references
 
-Please check the [API references](https://tsdocs.dev/docs/keyboard-i18n) for full list of APIs.
+Please check the [API references](https://npmx.dev/package-docs/keyboard-i18n/) for full list of APIs.
 
 ## License
 
