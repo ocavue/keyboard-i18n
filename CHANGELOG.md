@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/ocavue/keyboard-i18n/compare/v0.2.1...v0.2.2) (2026-09-23)
+
+
+### Miscellaneous Chores
+
+* release 0.2.2 ([559bec1](https://github.com/ocavue/keyboard-i18n/commit/559bec154bcc5d89a77e82dfad742773d64cc16a))
+
 ## [0.2.1](https://github.com/ocavue/keyboard-i18n/compare/v0.2.0...v0.2.1) (2024-12-25)
 
 
