@@ -1,5 +1,3 @@
-import './env.mock'
-
 import * as layouts from 'keyboard-layout-map/layouts'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 

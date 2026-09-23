@@ -2,7 +2,7 @@
   "name": "keyboard-i18n",
   "type": "module",
   "version": "0.2.1",
-  "packageManager": "pnpm@8.15.6",
+  "packageManager": "pnpm@11.24.0",
   "description": "Internationalization and localization utils for keyboard shortcuts",
   "author": "ocavue <ocavue@gmail.com>",
   "license": "MIT",
@@ -35,20 +35,25 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/index.js"
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "lint": "eslint .",
-    "fix": "eslint --fix . && prettier --write .",
-    "prepublishOnly": "nr build",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "lint": "pnpm run lint:eslint && pnpm run lint:oxfmt && pnpm run lint:knip",
+    "lint:oxfmt": "oxfmt --check",
+    "lint:eslint": "eslint",
+    "lint:knip": "knip",
+    "fix": "pnpm run fix:oxfmt && pnpm run fix:eslint",
+    "fix:oxfmt": "oxfmt",
+    "fix:eslint": "eslint --fix",
     "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc -b"
   },
   "dependencies": {
     "@zag-js/dom-query": "^0.48.0"
@@ -57,20 +62,20 @@
     "keyboard-layout-map": "^1.1.0"
   },
   "devDependencies": {
-    "@ocavue/eslint-config": "^1.5.0",
-    "@types/node": "^20.12.5",
-    "eslint": "^8.57.0",
-    "happy-dom": "^14.7.1",
+    "@ocavue/eslint-config": "^4.16.1",
+    "@ocavue/tsconfig": "^0.7.1",
+    "@types/node": "^24.0.0",
+    "eslint": "^10.9.1",
+    "happy-dom": "^20.0.0",
     "keyboard-layout-map": "^1.1.0",
-    "prettier": "^3.2.5",
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.4",
-    "vite": "^5.2.9",
-    "vitest": "^1.5.0"
+    "knip": "^6.33.0",
+    "oxfmt": "^0.65.0",
+    "tsdown": "^0.23.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.2.2",
+    "vitest": "^5.0.0"
   },
-  "renovate": {
-    "extends": [
-      "github>ocavue/config-renovate"
-    ]
+  "publishConfig": {
+    "access": "public"
   }
 }

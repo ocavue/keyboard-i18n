@@ -7,10 +7,7 @@ import { defaultLocalizer } from './localize'
 import { parseShortcut } from './parse'
 import type { KeyboardShortcut } from './types'
 
-function localize(
-  layout: KeyboardLayoutMap,
-  shortcut: KeyboardShortcut,
-): string {
+function localize(layout: KeyboardLayoutMap, shortcut: KeyboardShortcut): string {
   const parsed = parseShortcut(shortcut)
   const localized = defaultLocalizer(parsed, layout)
   return formatParsed(localized, layout, false).join(' ')
@@ -20,27 +17,17 @@ function localizeMany(
   layout: KeyboardLayoutMap,
   shortcuts: KeyboardShortcut[],
 ): Record<string, string> {
-  return Object.fromEntries(
-    shortcuts.map((shortcut) => [shortcut, localize(layout, shortcut)]),
-  )
+  return Object.fromEntries(shortcuts.map((shortcut) => [shortcut, localize(layout, shortcut)]))
 }
 
 function localizeAll(shortcuts: KeyboardShortcut[]) {
   return Object.fromEntries(
-    Object.entries(layouts).map(([name, layout]) => [
-      name,
-      localizeMany(layout, shortcuts),
-    ]),
+    Object.entries(layouts).map(([name, layout]) => [name, localizeMany(layout, shortcuts)]),
   )
 }
 
 test('localize', () => {
-  const snapshot = localizeAll([
-    'mod+,',
-    'mod+BracketLeft',
-    'mod+BracketRight',
-    'mod+Slash',
-  ])
+  const snapshot = localizeAll(['mod+,', 'mod+BracketLeft', 'mod+BracketRight', 'mod+Slash'])
   expect(snapshot).toMatchInlineSnapshot(`
     {
       "British": {

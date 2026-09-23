@@ -1,16 +1,3 @@
 {
-  "compilerOptions": {
-    "target": "es2018",
-    "module": "esnext",
-    "lib": ["esnext", "DOM"],
-    "moduleResolution": "Bundler",
-    "esModuleInterop": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "verbatimModuleSyntax": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true
-  }
+  "extends": "@ocavue/tsconfig/dom/app.json"
 }

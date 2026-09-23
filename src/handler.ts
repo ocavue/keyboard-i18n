@@ -1,11 +1,7 @@
 import { getActiveElement, isHTMLElement } from '@zag-js/dom-query'
 
 import { createChecker } from './checker'
-import {
-  type KeyboardEventLike,
-  type KeyboardShortcut,
-  type Options,
-} from './types'
+import type { KeyboardEventLike, KeyboardShortcut, Options } from './types'
 
 /**
  * Returns a keyboard event handler that can be used to handle keyboard shortcuts.
@@ -27,9 +23,7 @@ export function createHandler<E extends KeyboardEventLike = KeyboardEvent>(
   options?: Options,
 ): (event: E) => void {
   const shortcuts = Array.isArray(shortcut) ? shortcut : [shortcut]
-  const checkers = shortcuts.map((shortcut) =>
-    createChecker<E>(shortcut, options),
-  )
+  const checkers = shortcuts.map((shortcut) => createChecker<E>(shortcut, options))
 
   return function handler(event: E): void {
     for (const checker of checkers) {

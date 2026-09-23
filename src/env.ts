@@ -1,12 +1,9 @@
-/* eslint-disable deprecation/deprecation */
-
 import { getKeyboardLayout, type KeyboardLayoutMap } from 'keyboard-layout-map'
 
 import { layoutEquals } from './helpers'
 
 export const isAppleOS =
-  typeof window !== 'undefined' &&
-  /Mac|iP(hone|[ao]d)/.test(window.navigator.platform)
+  typeof window !== 'undefined' && /Mac|iP(?:hone|[ao]d)/.test(window.navigator.platform)
 
 let layout: KeyboardLayoutMap | null = null
 let updatedAt = 0
