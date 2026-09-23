@@ -1,11 +1,6 @@
 import { isKeyboardEventLike } from './helpers'
 import { wrapLocalizer } from './localize'
-import type {
-  KeyboardEventLike,
-  KeyboardShortcut,
-  Options,
-  ParsedKeyboardShortcut,
-} from './types'
+import type { KeyboardEventLike, KeyboardShortcut, Options, ParsedKeyboardShortcut } from './types'
 
 /**
  * Returns a function that checks if an keyboard event matches the keyboard shortcut.
@@ -33,10 +28,7 @@ export function createChecker<E extends KeyboardEventLike = KeyboardEvent>(
   }
 }
 
-function eventMatches(
-  event: KeyboardEventLike,
-  shortcut: ParsedKeyboardShortcut,
-) {
+function eventMatches(event: KeyboardEventLike, shortcut: ParsedKeyboardShortcut) {
   // Don't handle keyboard events when IME is active
   if (event.isComposing) {
     return false

@@ -1,7 +1,7 @@
 import { isAppleOS } from './env'
-import type { KeyboardEventCode } from './types'
-import type { KeyboardEventKey } from './types'
 import type {
+  KeyboardEventCode,
+  KeyboardEventKey,
   KeyboardModifier,
   KeyboardShortcut,
   ParsedKeyboardShortcut,

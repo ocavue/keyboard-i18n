@@ -1,13 +1,8 @@
-import {
-  identifyKeyboardLayout,
-  type KeyboardLayoutMap,
-} from 'keyboard-layout-map'
+import { identifyKeyboardLayout, type KeyboardLayoutMap } from 'keyboard-layout-map'
 
 import type { KeyboardEventLike } from './types'
 
-export function isKeyboardEventLike(
-  event: unknown,
-): event is KeyboardEventLike {
+export function isKeyboardEventLike(event: unknown): event is KeyboardEventLike {
   return !!(
     event &&
     typeof event === 'object' &&
@@ -22,10 +17,7 @@ export function isKeyboardEventLike(
   )
 }
 
-export function layoutEquals(
-  a: KeyboardLayoutMap | null,
-  b: KeyboardLayoutMap | null,
-) {
+export function layoutEquals(a: KeyboardLayoutMap | null, b: KeyboardLayoutMap | null) {
   if (a === b) {
     return true
   }

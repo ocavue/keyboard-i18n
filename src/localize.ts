@@ -1,7 +1,4 @@
-import {
-  identifyKeyboardLayout,
-  type KeyboardLayoutMap,
-} from 'keyboard-layout-map'
+import { identifyKeyboardLayout, type KeyboardLayoutMap } from 'keyboard-layout-map'
 
 import { getLayout } from './env'
 import { parseShortcut } from './parse'

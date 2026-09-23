@@ -13,26 +13,18 @@ describe('createFormatter', () => {
     expect(doFormat('Escape')).toMatchInlineSnapshot(`"Escape"`)
 
     expect(doFormat('shift+a')).toMatchInlineSnapshot(`"Shift a"`)
-    expect(doFormat('alt+KeyA', { isAppleOS: true })).toMatchInlineSnapshot(
-      `"Option a"`,
-    )
+    expect(doFormat('alt+KeyA', { isAppleOS: true })).toMatchInlineSnapshot(`"Option a"`)
   })
 
   it('can format mod on different platforms', () => {
-    expect(doFormat('mod+Slash', { isAppleOS: true })).toMatchInlineSnapshot(
-      `"Command /"`,
-    )
-    expect(doFormat('mod+Slash', { isAppleOS: false })).toMatchInlineSnapshot(
-      `"Ctrl /"`,
-    )
+    expect(doFormat('mod+Slash', { isAppleOS: true })).toMatchInlineSnapshot(`"Command /"`)
+    expect(doFormat('mod+Slash', { isAppleOS: false })).toMatchInlineSnapshot(`"Ctrl /"`)
   })
 
   it('can format shortcuts with different layouts', () => {
-    expect(
-      doFormat('mod+BracketLeft', { layout: layouts.US }),
-    ).toMatchInlineSnapshot(`"Ctrl ["`)
-    expect(
-      doFormat('mod+BracketLeft', { layout: layouts.German }),
-    ).toMatchInlineSnapshot(`"Ctrl ö"`)
+    expect(doFormat('mod+BracketLeft', { layout: layouts.US })).toMatchInlineSnapshot(`"Ctrl ["`)
+    expect(doFormat('mod+BracketLeft', { layout: layouts.German })).toMatchInlineSnapshot(
+      `"Ctrl ö"`,
+    )
   })
 })

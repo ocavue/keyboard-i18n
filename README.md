@@ -97,12 +97,9 @@ You can also handle multiple shortcuts with a single event handler.
 ```ts
 import { createHandler } from 'keyboard-i18n'
 
-const handler = createHandler(
-  ['ctrl+a', 'ctrl+shift+a'],
-  (event: KeyboardEvent) => {
-    console.log('ctrl+a or ctrl+shift+a is pressed')
-  },
-)
+const handler = createHandler(['ctrl+a', 'ctrl+shift+a'], (event: KeyboardEvent) => {
+  console.log('ctrl+a or ctrl+shift+a is pressed')
+})
 
 document.addEventListener('keydown', handler)
 ```
